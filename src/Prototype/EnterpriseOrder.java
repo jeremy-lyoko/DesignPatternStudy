@@ -1,6 +1,6 @@
 package Prototype;
 
-public class EnterpriseOrder implements OrderApi{
+public class EnterpriseOrder implements OrderApiNew {
     private String enterpriseName;
     private String productId;
     private int orderProductNum=0;
@@ -27,6 +27,15 @@ public class EnterpriseOrder implements OrderApi{
 
     public void setOrderProductNum(int orderProductNum) {
         this.orderProductNum = orderProductNum;
+    }
+
+    @Override
+    public OrderApiNew cloneOrder() {
+        EnterpriseOrder order=new EnterpriseOrder();
+        order.setProductId(this.getProductId());
+        order.setOrderProductNum(this.getOrderProductNum());
+        order.setEnterpriseName(this.getEnterpriseName());
+        return order;
     }
 
     public String toString() {
