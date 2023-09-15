@@ -40,7 +40,8 @@ public class PayManager extends Aggregate {
     }
 
     @Override
-    public Iterator createIterator() { //继承抽象工厂类，返回接口实现类的对象
+    public Iterator createIterator() {
+        //继承抽象工厂类，返回接口实现类的对象
         return new CollectionIterator(this);
     }
 }
